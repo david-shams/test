@@ -1,0 +1,34 @@
+{
+  "name": "ui-features",
+  "version": "1.0.0",
+  "description": "Demonstrate UI features using AngularJS, TypeScript, Bootsrap, JavaScript, automation with webpack, bower, grunt...",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.5.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david-shams/ui-features.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "TypeScript",
+    "Bootsrap",
+    "JavaScript",
+    "automation",
+    "with",
+    "webpack",
+    "bower",
+    "grunt"
+  ],
+  "author": "David Shams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david-shams/ui-features/issues"
+  },
+  "homepage": "https://github.com/david-shams/ui-features#readme"
+}
