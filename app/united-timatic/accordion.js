@@ -11,7 +11,7 @@ angular.module('ual.component', ['ngAnimate', 'ui.bootstrap'])
             content: 'Timatic Warning 1'
         },
         {
-            title: 'Timatic Warning 2',
+            title: 'Timatic [JSON]',
             content: [
                 {visa: "Required"},
                 {from: "Canada"},

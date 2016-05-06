@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Accordion Component</title>
-    <!--Load from cdn-->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
-    <!--<script src="example.js"></script>-->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="timatic.css">
-</head>
-<body ng-app="ual.component">
-
-<!--Main Navbar-->
-<div ng-include="'nav-bar.tmpl.html'"></div>
-<!--<div ng-include="'nav-bar-simple.tmpl.html'"></div>-->
-
 <div ng-controller="AccordionDemoCtrl">
     <script type="text/ng-template" id="group-template.html">
         <div class="panel {{panelClass || 'panel-default'}}">
@@ -33,16 +14,16 @@
     </script>
 
     <!--<p>-->
-        <!--Enable / Disable accordions. Opne/Close Accordion-->
-        <!--<button type="button" class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>-->
-        <!--<button type="button" class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>-->
+    <!--Enable / Disable accordions. Opne/Close Accordion-->
+    <!--<button type="button" class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>-->
+    <!--<button type="button" class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>-->
     <!--</p>-->
 
     <!--<div class="checkbox">-->
-        <!--<label>-->
-            <!--<input type="checkbox" ng-model="oneAtATime">-->
-            <!--Open only one at a time-->
-        <!--</label>-->
+    <!--<label>-->
+    <!--<input type="checkbox" ng-model="oneAtATime">-->
+    <!--Open only one at a time-->
+    <!--</label>-->
     <!--</div>-->
     <uib-accordion close-others="oneAtATime">
         <uib-accordion-group heading="Timatic Warning"  is-disabled="status.isFirstDisabled">
@@ -68,27 +49,15 @@
             </p>
         </uib-accordion-group>
         <!--<uib-accordion-group heading="Custom template" template-url="group-template.html">-->
-            <!--Hello-->
+        <!--Hello-->
         <!--</uib-accordion-group>-->
         <uib-accordion-group heading="Timatic Initially Expoanded" is-open="status.isFirstOpen" panel-class="panel-danger">
-            <!--All warnings:-->
-            <!--<div ng-include="'timatic-inform-customer.tmpl.html'"></div>-->
+            <div ng-include="'timatic-inform-customer.tmpl.html'"></div>
             <hr>
-            Visa warning<input type="checkbox" ng-model="visaWarning">
-            Airport tax warnings<input type="checkbox" ng-model="taxWarning">
-            Other warnings<input type="checkbox" ng-model="otherWarning">
-            <!--<div ng-hide="visa && health && other" ng-show="showTimatic" ng-include="'timatic.tmp.html'"></div>-->
-            <div ng-hide="visaWarning && taxWarning && otherWarning"  ng-include="'timatic.tmp.html'"></div>
+            Show timatic:<input type="checkbox" ng-model="showTimatic">
+            <div ng-show="showTimatic" ng-include="'timatic.tmp.html'"></div>
             <!--<p>Please, to delete your account, click the button below</p>-->
             <button class="btn btn-danger">Customer warned!</button>
         </uib-accordion-group>
     </uib-accordion>
 </div>
-
-<!--development:-->
-<!--<script src="../../../../../node_modules/angular/angular.js"></script>-->
-<!--<script src="../../../../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>-->
-<!--<script src="../../../../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>-->
-<script src="accordion.js"></script>
-</body>
-</html>
