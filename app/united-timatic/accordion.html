@@ -39,30 +39,31 @@
         </label>
     </div>
     <uib-accordion close-others="oneAtATime">
-        <uib-accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-            This content is straight in the template.
+        <uib-accordion-group heading="Timatic Warning"  is-disabled="status.isFirstDisabled">
+            <div ng-include="'timatic.tmp.html'"></div>
+            <div ng-include="'timatic-inform-customer.tmpl.html'"></div>
         </uib-accordion-group>
         <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-            {{group.content}}
+            <pre>{{group.content | json}}</pre>
+            <h2>If I only were a modern JSON:</h2>
+            <div ng-repeat="item in group.content"><input type="checkbox" value="group.content[$index]">{{group.content[$index]}}</div>
         </uib-accordion-group>
-        <uib-accordion-group heading="Dynamic Body Content: Countries">
-            <div ng-include="'../templates/common/countries.tmpl.html'"></div>
-            <p>The body of the uib-accordion group grows to fit the contents</p>
-            <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
-            <div ng-repeat="item in items">{{item}}</div>
+        <uib-accordion-group heading="Dynamic Body Content: Countries / Timatic">
+            <div ng-include="'timatic.tmp.html'"></div>
+            <!--<div ng-include="'../templates/common/countries.tmpl.html'"></div>-->
+            <!--<p>The body of the uib-accordion group grows to fit the contents</p>-->
+            <!--<button type="button" class="btn btn-default btn-sm" ng-click="addItem()"></button>-->
+            <!--<div ng-repeat="item in items">{{item | html}}</div>-->
+            <div ng-include="'timatic-inform-customer.tmpl.html'"></div>
+            <button type="button" ng-disable="true">Customer Informed!</button>
         </uib-accordion-group>
         <uib-accordion-group heading="Custom template" template-url="group-template.html">
             Hello
         </uib-accordion-group>
-        <uib-accordion-group heading="Delete account" panel-class="panel-danger">
-            <p>Please, to delete your account, click the button below</p>
-            <button class="btn btn-danger">Delete</button>
-        </uib-accordion-group>
-        <uib-accordion-group is-open="status.open">
-            <uib-accordion-heading>
-                I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-            </uib-accordion-heading>
-            This is just some content to illustrate fancy headings.
+        <uib-accordion-group heading="Timatic Initially Expoanded" is-open="status.isFirstOpen" panel-class="panel-danger">
+            <div ng-include="'timatic-inform-customer.tmpl.html'"></div>
+            <!--<p>Please, to delete your account, click the button below</p>-->
+            <button class="btn btn-danger">Customer warned!</button>
         </uib-accordion-group>
     </uib-accordion>
 </div>

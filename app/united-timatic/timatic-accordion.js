@@ -16,7 +16,12 @@ angular.module('ui.bootstrap', ['ngAnimate', 'ui.bootstrap'])
             }
         ];
 
-        $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+        $scope.items = ['<label for="visaRequired"></label>'+
+            '<input type="checkbox" id="visaRequired" value="visa">',
+            '<label for="Other"></label>'+
+            '<input type="checkbox" id="Other" value="other">',
+            '<label for="warningHealth"></label>'+
+            '<input type="checkbox" id="warningHealth" value="helth">'];
 
         $scope.addItem = function() {
             var newItemNo = $scope.items.length + 1;

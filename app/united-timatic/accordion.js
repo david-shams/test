@@ -7,16 +7,26 @@ angular.module('ual.component', ['ngAnimate', 'ui.bootstrap'])
 
     $scope.groups = [
         {
-            title: 'Dynamic Group Header - 1',
-            content: 'Dynamic Group Body - 1'
+            title: 'Timatic Warnig 1',
+            content: 'Timatic Warning 1'
         },
         {
-            title: 'Dynamic Group Header - 2',
-            content: 'Dynamic Group Body - 2'
+            title: 'Timatic Warning 2',
+            content: [
+                {visa: "Required"},
+                {from: "Canada"},
+                {to: "India"},
+                {airportTax: "25$"}
+            ]
         }
     ];
 
-    $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+    $scope.items = ['<label for="visaRequired"></label>'+
+    '<input type="checkbox" id="visaRequired" value="visa">',
+        '<label for="Other"></label>'+
+        '<input type="checkbox" id="Other" value="other">',
+        '<label for="warningHealth"></label>'+
+        '<input type="checkbox" id="warningHealth" value="helth">'];
 
     $scope.addItem = function() {
         var newItemNo = $scope.items.length + 1;
